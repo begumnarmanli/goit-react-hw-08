@@ -1,0 +1,255 @@
+.contactCard {
+  display: flex;
+  gap: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(252, 113, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover {
+  box-shadow: 0 4px 12px rgba(252, 113, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #fc7100;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.editBtn {
+  background: linear-gradient(135deg, #fc7100, #e55a00);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(252, 113, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editBtn:hover {
+  background: linear-gradient(135deg, #e55a00, #cc4f00);
+  box-shadow: 0 4px 10px rgba(252, 113, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.deleteBtn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+  transform: translateY(-1px);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: slideIn 0.4s ease;
+}
+
+.modalContent {
+  padding: 30px;
+  text-align: center;
+}
+
+.modalTitle {
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.modalMessage {
+  font-size: 16px;
+  margin: 0 0 25px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cancelBtn {
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cancelBtn:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.confirmDeleteBtn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+}
+
+.confirmDeleteBtn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #fc7100;
+  box-shadow: 0 0 0 2px rgba(252, 113, 0, 0.2);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
+}
+
+.saveBtn:hover {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #fc7100;
+}
+
+.link.active {
+  color: #fc7100;
+}
+
+.link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fc7100;
+  border-radius: 2px;
+}

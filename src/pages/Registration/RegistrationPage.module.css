@@ -1,0 +1,82 @@
+.container {
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(252, 113, 0, 0.15);
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.field input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s;
+  background-color: #fff;
+}
+
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+  -webkit-text-fill-color: #333 !important;
+  background-color: #fff !important;
+}
+
+.field input:focus {
+  border-color: #fc7100;
+  box-shadow: 0 0 0 2px rgba(252, 113, 0, 0.2);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.button {
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #fc7100, #e55a00);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(252, 113, 0, 0.3);
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #e55a00, #cc4f00);
+  box-shadow: 0 4px 12px rgba(252, 113, 0, 0.4);
+  transform: translateY(-1px);
+}
