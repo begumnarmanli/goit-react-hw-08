@@ -38,9 +38,9 @@
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-  -webkit-text-fill-color: #333 !important;
-  background-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
+  -webkit-text-fill-color: #333;
+  background-color: #fff;
 }
 
 .ErrorMessage {

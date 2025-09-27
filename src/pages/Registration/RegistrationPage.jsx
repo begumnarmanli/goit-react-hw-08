@@ -18,7 +18,7 @@ const Registration = () => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(2, "Too short").required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
-    password: Yup.string().min(6, "Too short").required("Required"),
+    password: Yup.string().min(7, "Too short").required("Required"),
   });
 
   const formik = useFormik({

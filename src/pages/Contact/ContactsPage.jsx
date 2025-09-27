@@ -27,12 +27,7 @@ export default function ContactsPage() {
         placeholder="Search contacts..."
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        style={{
-          marginTop: "10px",
-          marginBottom: "20px",
-          padding: "5px",
-          width: "550px",
-        }}
+        className={styles.searchInput}
       />
 
       {isLoading && !error && <p>Loading...</p>}

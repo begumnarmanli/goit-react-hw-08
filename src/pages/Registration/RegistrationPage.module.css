@@ -46,9 +46,9 @@
 .field input:-webkit-autofill:hover,
 .field input:-webkit-autofill:focus,
 .field input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-  -webkit-text-fill-color: #333 !important;
-  background-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
+  -webkit-text-fill-color: #333;
+  background-color: #fff;
 }
 
 .field input:focus {
