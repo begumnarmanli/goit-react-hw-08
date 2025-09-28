@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "https://connections-api.goit.global/api";
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 console.log("Base URL:", axios.defaults.baseURL);
 
