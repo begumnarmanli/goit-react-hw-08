@@ -15,7 +15,7 @@ const Registration = () => {
     password: "",
   };
 
-  const validationSchema = Yup.object().shape({
+  const validationSchema = Yup.object({
     name: Yup.string().min(2, "Too short").required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().min(7, "Too short").required("Required"),
@@ -25,13 +25,18 @@ const Registration = () => {
     initialValues,
     validationSchema,
     onSubmit: async (values) => {
-      const result = await dispatch(register(values));
+      try {
+        const result = await dispatch(register(values));
 
-      if (register.fulfilled.match(result)) {
-        navigate("/contacts");
-      } else {
-        console.log("Register failed:", result.payload);
-        alert("Registration failed. Check console for details.");
+        if (register.fulfilled.match(result)) {
+          navigate("/contacts");
+        } else {
+          console.error("Registration failed:", result.payload);
+          alert(`Kayıt başarısız: ${result.payload}`);
+        }
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        alert("Beklenmeyen bir hata oluştu.");
       }
     },
   });
@@ -43,46 +48,46 @@ const Registration = () => {
         <div className={styles.field}>
           <label htmlFor="name">Name</label>
           <input
-            type="text"
             id="name"
             name="name"
+            type="text"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
           />
-          {formik.touched.name && formik.errors.name ? (
+          {formik.touched.name && formik.errors.name && (
             <div className={styles.error}>{formik.errors.name}</div>
-          ) : null}
+          )}
         </div>
 
         <div className={styles.field}>
           <label htmlFor="email">Email</label>
           <input
-            type="email"
             id="email"
             name="email"
+            type="email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {formik.touched.email && formik.errors.email ? (
+          {formik.touched.email && formik.errors.email && (
             <div className={styles.error}>{formik.errors.email}</div>
-          ) : null}
+          )}
         </div>
 
         <div className={styles.field}>
           <label htmlFor="password">Password</label>
           <input
-            type="password"
             id="password"
             name="password"
+            type="password"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
           />
-          {formik.touched.password && formik.errors.password ? (
+          {formik.touched.password && formik.errors.password && (
             <div className={styles.error}>{formik.errors.password}</div>
-          ) : null}
+          )}
         </div>
 
         <button type="submit" className={styles.button}>
