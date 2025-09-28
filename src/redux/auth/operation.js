@@ -21,21 +21,28 @@ export const register = createAsyncThunk(
       clearAuthHeader();
       console.log("Register credentials:", credentials);
       console.log("Base URL:", axios.defaults.baseURL);
+      console.log("Full URL:", axios.defaults.baseURL + "/users/signup");
+      
       const response = await axios.post("/users/signup", credentials);
+      console.log("Register SUCCESS:", response.data);
       return response.data;
     } catch (error) {
+      console.error("Register FULL ERROR:", error);
       console.error("Register error response:", error.response);
       console.error("Register error data:", error.response?.data);
       console.error("Register error status:", error.response?.status);
+      console.error("Register error headers:", error.response?.headers);
+      
       const message =
         error.response?.data?.message ||
+        error.response?.data?.error ||
         error.response?.data ||
+        error.message ||
         "Bir hata oluştu. Lütfen tekrar deneyin.";
       return thunkAPI.rejectWithValue(message);
     }
   }
 );
-
 
 export const logIn = createAsyncThunk(
   "auth/logIn",
