@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styles from "./RegistrationPage.module.css";
 
-const Registration = () => {
+const RegistrationPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -98,4 +98,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default RegistrationPage;
